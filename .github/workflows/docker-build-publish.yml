@@ -34,7 +34,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
-        context: ./LicenseApi  # Specify the path to your Dockerfile
-        file: ./LicenseApi/Dockerfile  # Specify the path to your Dockerfile
+        context: .  # Root level context
+        file: ./Dockerfile  # Dockerfile location
         push: true
         tags: ghcr.io/${{ github.repository_owner }}/licenseapi:latest
