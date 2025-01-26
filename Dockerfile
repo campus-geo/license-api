@@ -4,7 +4,9 @@ WORKDIR /app
 EXPOSE 8080
 
 # Build the application
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 WORKDIR /src
 COPY ["LicenseApi/LicenseApi.csproj", "LicenseApi/"]
 RUN dotnet restore "./LicenseApi/LicenseApi.csproj"
