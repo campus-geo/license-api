@@ -1,11 +1,6 @@
-@LicenseApi_HostAddress = http://localhost:5293
+@LicenseApi_HostAddress = http://localhost:5048
 
-GET {{LicenseApi_HostAddress}}/todos/
-Accept: application/json
-
-###
-
-GET {{LicenseApi_HostAddress}}/todos/1
+GET {{LicenseApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
