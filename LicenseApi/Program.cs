@@ -3,8 +3,13 @@ namespace LicenseApi
 {
     public class Program
     {
+        // The following constant is replaced during the build process, it is not to be changed manually.
+        public const string X_VERSION = "unknown-development";
+
         public static void Main(string[] args)
         {
+            Console.WriteLine($"X_VERSION: {X_VERSION}");
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
