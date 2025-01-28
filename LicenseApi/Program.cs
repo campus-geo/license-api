@@ -26,7 +26,13 @@ namespace LicenseApi
                 app.MapOpenApi();
             }
 
-            app.UseAuthorization();
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Append("X-Version", X_VERSION);
+                await next.Invoke();
+            });
+
+            // app.UseAuthorization();
 
 
             app.MapControllers();
